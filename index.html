@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f2">
+    <meta name="description" content="Learn mathematics, web development, and data analysis by building things for the real world.">
+    <title>M-TECH School | Learn by doing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8M8 11h7"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.8 8.2-2.2 5.4-5.4 2.2 2.2-5.4z"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4m0 1c6-4 8 4 14 0v10c-6 4-8-4-14 0"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 6 10 6-10 6z"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6m-11 5L20 4"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#dashboard" aria-label="M-TECH School dashboard">
+          <span class="brand-mark">M<span>.</span></span>
+          <span class="brand-name">M-TECH <small>SCHOOL</small></span>
+        </a>
+        <div class="side-label">YOUR SPACE</div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <button class="nav-link is-active" data-route="dashboard"><svg><use href="#i-grid"/></svg><span>Overview</span></button>
+          <button class="nav-link" data-route="learning"><svg><use href="#i-book"/></svg><span>My learning</span><span class="nav-count" id="nav-progress">0</span></button>
+          <button class="nav-link" data-route="tracks"><svg><use href="#i-compass"/></svg><span>Explore tracks</span></button>
+          <button class="nav-link" data-route="projects"><svg><use href="#i-flag"/></svg><span>Project studio</span></button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="mentor-note"><span class="mentor-spark">✳</span><p>Small steps.<br><strong>Real skills.</strong></p><span class="mentor-line"></span></div>
+          <div class="sidebar-foot"><span class="status-dot"></span> BUILT FOR CURIOUS MINDS</div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation"><span></span><span></span></button>
+          <div class="breadcrumb" id="breadcrumb">Your learning space <span>/</span> <strong>Overview</strong></div>
+          <form class="search-form" id="search-form" role="search">
+            <svg><use href="#i-search"/></svg>
+            <input id="search-input" type="search" placeholder="Find a course or topic" aria-label="Find a course or topic">
+            <kbd>/</kbd>
+          </form>
+          <button class="icon-button notification-button" id="notification-button" aria-label="Notifications"><span class="notification-dot"></span><span class="bell-shape">⌑</span></button>
+          <div class="profile-chip"><span class="profile-avatar">J</span><span class="profile-name">Learner</span></div>
+        </header>
+        <section id="app" class="page-content" aria-live="polite"></section>
+        <footer class="site-footer"><span>M-TECH SCHOOL</span><span>Learn it. Use it. Build with it.</span><span>© 2026</span></footer>
+      </main>
+    </div>
+
+    <dialog class="lesson-dialog" id="lesson-dialog" aria-labelledby="dialog-title">
+      <form method="dialog"><button class="dialog-close" aria-label="Close lesson">×</button></form>
+      <div id="dialog-content"></div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
